@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header Section */
+.header {
+    background-color: #CFFCB7;
+    padding-bottom: 50px;
+}
+
+
+
+.logo-title {
+    font-size: 35px;
+    font-weight: 700;
+    color: #034F20;
+    transform: translateX(-20px);
+}
+
+.menu {
+    height: 3.5rem;
+    background: #FFF;
+    border: 2px solid #B5E6AB;
+    border-radius: 50px;
+    padding: 10px 20px;
+    display: inline-block;
+    transform: translateX(-4.6rem);
+}
+
+.menu-item {
+    text-decoration: none;
+    font-size: x-large;
+    color: #034F20;
+    font-weight: 500;
+    margin: 0 15px;
+}
+
+.menu-item:hover {
+    color: #105E2E;
+}
+
+.main-heading {
+    font-size: 36px;
+    color: #034F20;
+    font-weight: 700;
+}
+
+.sub-heading {
+    font-size: 20px;
+    color: #413E3E;
+    margin: 20px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-text {
+    font-size: 28px;
+    color: #105E2E;
+    font-weight: 700;
+}
+.icon{
+    height: 50px;
+    margin:0 12px 0 12px;
+    width: 50px;
+}
+
+/* Features Section */
+.features {
+    background-color: #FFF;
+}
+
+h3 {
+    color: #000;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.feature-card {
+    border: none;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 250px;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card img {
+    width: 10rem;
+    height: 10rem;
+    object-fit: contain;
+}
+
+.feature-card .card-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+/* Background Colors */
+.bg-yellow {
+    background-color: #FFF3D1;
+}
+
+.bg-green {
+    background-color: #CFEED0;
+}
+
+.bg-purple {
+    background-color: #EADEFD;
+}
+
+.bg-blue {
+    background-color: #DAF8FF;
+}
