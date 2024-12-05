@@ -28,7 +28,7 @@ const deliveryOptions = [
     time: '2-3 days',
     rating: '4.5',
     price: '₹5.99',
-    co2Savings: '2.5kg',
+    co2Savings: '2.5',
     ecoFriendly: true,
     weight: 5, 
     distance: 50, 
@@ -38,9 +38,9 @@ const deliveryOptions = [
     id: 'fasttrack',
     name: 'FastTrack Logistics',
     time: '2-3 days',
-    rating: '4.7',
+    rating: '3.7',
     price: '₹4.99',
-    co2Savings: '5.8kg',
+    co2Savings: '5.8',
     ecoFriendly: false,
     weight: 12, 
     distance: 47, 
@@ -52,7 +52,7 @@ const deliveryOptions = [
     time: '3-4 days',
     rating: '4.3',
     price: '₹6.99',
-    co2Savings: '3.1kg',
+    co2Savings: '3.1',
     ecoFriendly: true,
     weight: 5, 
     distance: 30,  
@@ -90,7 +90,7 @@ const calculateCarbonEmissions = async (delivery) => {
 
       if (carbonEmissionFactor) {
         // Update CO2 savings in the delivery option
-        delivery.co2Savings = `${carbonEmissionFactor}kg`;
+        delivery.co2Savings = `${carbonEmissionFactor}`;
         console.log(`${name} emits ${carbonEmissionFactor} of CO2.`);
       } else {
         console.log(`No carbon emission data available for ${name}.`);
@@ -119,4 +119,4 @@ app.get("/homepage", (req, res) => {
 // START SERVER
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
-})
+});
