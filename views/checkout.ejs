@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoTrack - Checkout</title>
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="bg-success text-white py-3" data-aos="fade-down">
+    <div class="container d-flex justify-content-between align-items-center">
+      <a href="/homepage">
+        <h1 class="h2"><img class="images logo" src="/Logo-homepage.png" alt="x">EcoTrack</h1>
+      </a>
+      <span class="badge bg-light text-success cart-text">Cart (2) <img class="images cart" src="/cart.png"
+          alt="cart"></span>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <div class="container my-5">
+    <!-- Order Summary -->
+    <section class="order-summary mb-4" data-aos="fade-right">
+      <h3 class="border-bottom pb-2"><img class="images cart" src="/cart.png" alt="board"> Order Summary</h3>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Wireless Earbuds x 1
+          <span>₹129.99</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Smart Watch x 1
+          <span>₹199.99</span>
+        </li>
+      </ul>
+      <h4 class="text-end">Subtotal: <span>₹329.98</span></h4>
+    </section>
+
+    <!-- Delivery Options -->
+    <section class="delivery-options" data-aos="zoom-in">
+      <h3 class="border-bottom pb-2"><img class="images cart delivery" src="/truck.png" alt="truck"> Select Delivery
+        Partner</h3>
+      <!-- <form action="/place-order" method="POST"> -->
+        <div class="row g-3">
+          <% deliveryOptions.forEach(option=> { %>
+            <div class="col-md-6 col-lg-4">
+              <div class="card p-3 shadow-sm" data-aos="fade-up">
+                <label for="<%= option.id %>" class="d-flex align-items-center">
+                  <input type="radio" id="<%= option.id %>" name="delivery" value="<%= option.id %>"
+                    class="form-check-input me-2">
+                  <div>
+                    <h5>
+                      <%= option.name %>
+                        <% if (option.ecoFriendly) { %>
+                          <span class="badge eco-friendly-badge"><img class="images" src="/leaf.png" alt="leaf">
+                            Eco-Friendly</span>
+                          <% } %>
+                    </h5>
+                    <p>Delivery time: <%= option.time %> | Rating: <%= option.rating %> ⭐</p>
+                    <% if (option.ecoFriendly) { %>
+                      <p class="saves"><img class="images" src="/leaf.png" alt="leaf"> Saves <strong>
+                          <%= option.co2Savings %>
+                        </strong> CO2 emissions</p>
+                      <% } else { %>
+                        <p class="produces"><img class="images cart truck" src="/truck.png" alt="truck"> Produces
+                          <strong>
+                            <%= option.co2Savings %>
+                          </strong> CO2 emissions
+                        </p>
+                        <% } %>
+                        <h6>Price: <%= option.price %></h6>
+                  </div>
+                </label>
+              </div>
+            </div>
+            <% }); %>
+        </div>
+        <button type="button" class="btn btn-primary place-order h-30px w-100 mt-3">Place Order</button>
+      <!-- </form> -->
+    </section>
+
+    <!-- Total -->
+    <section class="total mt-4" data-aos="fade-up">
+      <div class="d-flex justify-content-between align-items-center">
+        <h4>Subtotal: ₹329.98</h4>
+        <h4>Delivery Fee: ₹<span id="delivery-fee">0.00</span></h4>
+        <h3>Total: ₹<span id="total">329.98</span></h3>
+      </div>
+    </section>
+  </div>
+
+  <!-- Fullscreen Animation -->
+  <div id="fullscreen-animation" class="fullscreen-animation">
+    <div class="tick">&#10003;</div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 400,
+      easing: 'ease-out',
+    });
+
+    // Trigger Animation on "Place Order" Button Click
+document.querySelector('.place-order').addEventListener('click', function () {
+  const animation = document.getElementById('fullscreen-animation');
+  animation.classList.add('show');
+
+  document.body.style.overflow = 'hidden'; // Disable scrolling temporarily
+  setTimeout(() => {
+    animation.classList.remove('show');
+    document.body.style.overflow = ''; // Re-enable scrolling
+  }, 3000);
+});
+
+// Update Delivery Fee and Total Price
+document.querySelectorAll('input[name="delivery"]').forEach((radio) => {
+  radio.addEventListener('change', function () {
+    const selectedOption = document.querySelector('input[name="delivery"]:checked');
+    if (selectedOption) {
+      // Get the price from the delivery option
+      const priceText = selectedOption.closest('label').querySelector('h6').textContent.trim();
+      const price = parseFloat(priceText.replace('Price: ₹', '').trim());
+
+      if (!isNaN(price)) {
+        // Update delivery fee and total price
+        document.getElementById('delivery-fee').textContent = price.toFixed(2);
+
+        const subtotal = 329.98; // Replace with actual subtotal if dynamic
+        const total = subtotal + price;
+        document.getElementById('total').textContent = total.toFixed(2);
+      }
+    }
+  });
+});
+
+// Prevent Scroll Issues on Page Load
+window.onload = function () {
+  window.scrollTo(0, 0);
+};
+
+  </script>
+</body>
+
+</html>
