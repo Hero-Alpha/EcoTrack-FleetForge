@@ -22,7 +22,7 @@ EcoTrack is a sustainable shipping plugin designed to integrate with e-commerce 
 
 - [Deepika Anand](https://github.com/deepikaa0402)   
 - [Diksha Sharma](https://github.com/diksha1504)  
-- [Dipti](https://github.com/teammate3)
+- [Dipti](https://github.com/DiptiChahar)
 - [Sharique Ahmed](https://github.com/Shaito345)
 - [Yash Kumar](https://github.com/Hero-Alpha) 
 
