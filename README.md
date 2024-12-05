@@ -30,10 +30,10 @@ EcoTrack is a sustainable shipping plugin designed to integrate with e-commerce 
 
 ## **Tech Stack**
 - **Frontend**: React, JavaScript, HTML/CSS
-- **Backend**: Node.js, Express.js
-- **APIs**: Integration with green delivery partners (e.g., EVs, drones)
-- **Database**: MongoDB (for storing user data, eco-points, and delivery records)
-- **Deployment**: Vercel or Netlify (for frontend deployment), Heroku or AWS for backend
+- **Backend**: Node.js, Express.js, EJS
+- **APIs**: Sarthi, Vahan, Carbon Emission API
+- **Database**: MongoDB 
+- **Deployment**: Render
 
 
 ## **Steps to Clone and Set Up Locally**
