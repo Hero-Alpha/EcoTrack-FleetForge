@@ -9,7 +9,6 @@ EcoTrack is a sustainable shipping plugin designed to integrate with e-commerce 
 
 
 
-
 ## **Key Features**
 - **Carbon Emissions Display**: Shows real-time carbon footprint for each shipping option, helping customers make eco-friendly decisions.
 - **Green Delivery Partners Integration**: Partners with eco-friendly delivery services, including electric vehicles and drones, to reduce emissions.
@@ -18,12 +17,24 @@ EcoTrack is a sustainable shipping plugin designed to integrate with e-commerce 
 - **Gamification and Engagement**: Eco-leaderboards and badges to motivate customers to keep making eco-friendly choices.
 - **Admin Panel**: A simple dashboard for e-commerce admins to manage green shipping options and add delivery partner details.
 
+
+## Teammates
+
+- [Deepika Anand](https://github.com/deepikaa0402)   
+- [Diksha Sharma](https://github.com/diksha1504)  
+- [Dipti](https://github.com/teammate3)
+- [Sharique Ahmed](https://github.com/Shaito345)
+- [Yash Kumar](https://github.com/Hero-Alpha) 
+
+
+
 ## **Tech Stack**
 - **Frontend**: React, JavaScript, HTML/CSS
 - **Backend**: Node.js, Express.js
 - **APIs**: Integration with green delivery partners (e.g., EVs, drones)
 - **Database**: MongoDB (for storing user data, eco-points, and delivery records)
 - **Deployment**: Vercel or Netlify (for frontend deployment), Heroku or AWS for backend
+
 
 ## **Steps to Clone and Set Up Locally**
 Follow these steps to clone and set up the EcoTrack plugin locally. Star and fork the repository to your Github Account.
@@ -42,11 +53,30 @@ Follow these steps to clone and set up the EcoTrack plugin locally. Star and for
    npm start
 
 
-### **MIT License**:
-- The above `README.md` is formatted with the necessary sections like **Overview**, **Key Features**, **Tech Stack**, and **Setup Instructions**.
-- You can replace the placeholder URL in the `git clone` command and adjust the environment variable setup according to your specific requirements.
-- The **Screenshots** section is provided as an example where you can link images (you can upload them to your repository or link to external image sources).
-- Lastly, **License** section is added, but you can adjust it if your project uses a different license.
+## License
+
+MIT License
+
+Copyright (c) [2024] [FleetForge]
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
 
 
 
