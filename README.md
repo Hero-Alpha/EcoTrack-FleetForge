@@ -23,22 +23,21 @@ EcoTrack is a sustainable shipping plugin designed to integrate with e-commerce 
 - **Deployment**: Vercel or Netlify (for frontend deployment), Heroku or AWS for backend
 
 ## **Steps to Clone and Set Up Locally**
-Follow these steps to clone and set up the EcoTrack plugin locally:
-
+Follow these steps to clone and set up the EcoTrack plugin locally. Star and fork the repository to your Github Account.
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-repository/ecotrack-plugin.git
-
-2. **Install Dependencies: **
+   git clone https://github.com/your-username/EcoTrack-FleetForge
+2. **Install Dependencies:**
    ```bash
    npm install
-
-
 3. **Set up Environment Variables: Create a .env file in the root of both frontend and backend directories and add necessary environment variables, such as API keys for green delivery services.**
-
-4. **Install Dependencies: **
+4. **For backend:**
+   ```bash
+   npm run server
+5. **Start development server for frontend:**
    ```bash
    npm start
+
 
 ### **MIT License**:
 - The above `README.md` is formatted with the necessary sections like **Overview**, **Key Features**, **Tech Stack**, and **Setup Instructions**.
