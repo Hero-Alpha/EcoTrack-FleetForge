@@ -4,6 +4,9 @@
 EcoTrack is a sustainable shipping plugin designed to integrate with e-commerce platforms. Developed for the **NLDS ULIP Logistics Hackathon 2.0**, it enables customers to make eco-friendly shipping choices, reduces carbon emissions, and rewards customers for choosing greener options. By providing real-time carbon footprint data and integrating with green delivery services, EcoTrack promotes a transparent and environmentally conscious approach to logistics.
 
 ## **Screenshots**
+![HomePage](https://github.com/Hero-Alpha/EcoTrack-FleetForge/blob/main/asset/dashboard.jpg)
+![Checkout Page](https://github.com/Hero-Alpha/EcoTrack-FleetForge/blob/main/asset/checkout.jpg)
+
 
 
 
