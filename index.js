@@ -1,13 +1,28 @@
 const express = require("express");
-// const connectDB = require("./db");
+const mongoose = require("mongoose");
 const path = require("path");
-const { postRequest } = require("./services/apiService");
-require("dotenv").config();
 const methodOverride = require("method-override");
 const ejsMate = require("ejs-mate");
+const ExpressError = require("./utils/ExpressError.js");
+const session = require("express-session");
+const flash = require("connect-flash");
+
+
+// ----------------------------------------------------------------------------------------------------------------
+
+// const connectDB = require("./db");
+const { postRequest } = require("./services/apiService");
+require("dotenv").config();
+
+// ----------------------------------------------------------------------------------------------------------------
+// REQUEST HANDLING ROUTERS
+const companyRouter = require("./routes/companyRoutes");
+const driverRouter = require("./routes/driverRoutes");
+const vehicleRouter = require("./routes/vehicleRoutes");
 
 const app = express();
 
+// ----------------------------------------------------------------------------------------------------------------
 // SET UP EJS VIEW ENGINE
 app.engine("ejs",ejsMate);
 app.set("view engine","ejs");
@@ -17,9 +32,21 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 app.use(methodOverride("_method"));
 
+// ----------------------------------------------------------------------------------------------------------------
 // CONNECT TO MONGODB
 // connectDB();
 
+main()
+    .then(()=>{
+        console.log("Database connected");
+    })
+    .catch((err)=> console.log(err));
+
+async function main() {
+    await mongoose.connect("mongodb://127.0.0.1:27017/ecotrack");
+}
+
+// ----------------------------------------------------------------------------------------------------------------
 // MIDDLEWARE TO PARSE JSON REQUESTS
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "asset")));
@@ -27,6 +54,27 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 4001;
 
+// ---------------------------------------------------------------------
+app.use(
+  session({
+    secret: "thisIsASecretKey", 
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+
+app.use(flash());
+
+app.use((req,res,next)=>{
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  res.locals.deleted = req.flash("deleted");
+  res.locals.edited = req.flash("edited");
+  next();
+});
+
+// ----------------------------------------------------------------------------------------------------------------
 // GLOBAL DELIVERY OPTIONS
 const deliveryOptions = [
   {
@@ -67,14 +115,8 @@ const deliveryOptions = [
   }
 ]
 
-// RENDER CHECKOUT PAGE WITH DELIVERY OPTIONS
-app.get('/checkout', async (req, res) => {
-  // Update the delivery options with calculated CO2 savings
-  await calculateEmissionsForAllDeliveries();
 
-  res.render('listings/checkout', { deliveryOptions });
-});
-
+// ----------------------------------------------------------------------------------------------------------------
 // CALCULATE CARBON EMISSIONS USING ULIP API
 const calculateCarbonEmissions = async (delivery) => {
   const { weight, distance, tripCount, name } = delivery;
@@ -110,6 +152,7 @@ const calculateCarbonEmissions = async (delivery) => {
   }
 }
 
+// ----------------------------------------------------------------------------------------------------------------
 // CALCULATE EMISSIONS FOR ALL DELIVERY OPTIONS
 const calculateEmissionsForAllDeliveries = async () => {
   console.log("Calculating carbon emissions for delivery options...");
@@ -118,10 +161,49 @@ const calculateEmissionsForAllDeliveries = async () => {
   }
 }
 
+// ----------------------------------------------------------------------------------------------------------------
+// PAGE / ROUTER RENDERING
+
+// RENDER CHECKOUT PAGE WITH DELIVERY OPTIONS
+app.get('/checkout', async (req, res) => {
+  await calculateEmissionsForAllDeliveries();
+  res.render('listings/checkout', { deliveryOptions });
+});
+
 // HOMEPAGE ROUTE
 app.get("/homepage", (req, res) => {
   res.render("listings/homepage");
 });
+
+// COMPANY ROUTE
+app.get("/signin",(req,res)=>{
+  res.render("listings/companySignup");
+});
+
+app.use("/signup",companyRouter);
+
+// --------------------------------------------------------------------------
+
+app.get("/feature1",(req,res)=>{
+  res.render("listings/feature1");
+});
+
+
+// --------------------------------------------------------------------------
+
+// General error responder
+app.all("*",(req,res,next)=>{
+  next(new ExpressError(404, "Page Not Found!"));
+});
+
+// --------------------------------------------------------------------------
+
+// Custom error handler
+app.use((err, req, res, next)=>{
+  let { statusCode=500,message="Something Went Wrong!" } = err;
+  res.render("listings/error.ejs",{statusCode,message});
+});
+
 
 // START SERVER
 app.listen(PORT, () => {

@@ -1,0 +1,114 @@
+<% layout("/layouts/boilerplate") %>
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/feature1.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    
+        <!-- Main Content -->
+        <div class="container mt-4">
+            <!-- Header -->
+            <div class="header animate-fade-in">
+                <h2>Carbon Emission Tracking Dashboard</h2>
+                <p>Analyze your company's delivery-related carbon emissions.</p>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="row mt-4">
+                <!-- Pie Chart -->
+                <div class="col-md-6">
+                    <div class="chart-container animate-slide-up">
+                        <h5 class="text-center">CO₂ Emissions by Delivery Partner</h5>
+                        <canvas id="emissionPieChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Bar Chart with Stats Cards -->
+                <div class="col-md-6">
+                    <div class="chart-container animate-slide-up">
+                        <h5 class="text-center">Monthly CO₂ Emissions</h5>
+                        <canvas id="monthlyBarChart"></canvas>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="row g-2 mt-3 stats-card-container animate-fade-in">
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <h5 class="stats-title">Total Deliveries</h5>
+                                <h4>120</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <h5 class="stats-title">Total Carbon Emissions</h5>
+                                <h4>250 kg</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <h5 class="stats-title">Sustainable Deliveries</h5>
+                                <h4>85%</h4>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="stats-card text-center">
+                                <h5 class="stats-title">Avg Emission per Delivery</h5>
+                                <h4>2.08 kg</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="table-responsive mt-5 animate-fade-in">
+                <h4 class="table-heading text-center mb-3">Delivery Details</h4>
+                <table class="table table-striped table-hover text-center">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Month</th>
+                            <th>Partner</th>
+                            <th>CO₂ Emissions (kg)</th>
+                            <th>Deliveries</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>January</td>
+                            <td>EcoLogistics</td>
+                            <td>45</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>GreenTrucks</td>
+                            <td>35</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>CycleDelivery</td>
+                            <td>20</td>
+                            <td>30</td>
+                        </tr>
+                        <tr>
+                            <td>April</td>
+                            <td>ElectricVans</td>
+                            <td>60</td>
+                            <td>70</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Custom JS -->
+        <script src="js/feature1.js"></script>
+    

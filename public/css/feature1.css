@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+.header {
+    background-color: #2e7d32;
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Stats Cards */
+.stats-card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    background-color: white;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stats-card h4 {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 10px 0;
+}
+
+.stats-title {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Chart Containers */
+.chart-container {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.chart-container h5 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Table Styles */
+.table-heading {
+    font-size: 24px;
+    color: #2e7d32;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.table th {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeIn 1s ease-out;
+}
+
+.animate-slide-up {
+    animation: slideUp 1s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .col-md-3 {
+        flex: 1 1 48%;
+        margin-bottom: 20px;
+    }
+
+    .col-md-6 {
+        flex: 1 1 100%;
+    }
+}
