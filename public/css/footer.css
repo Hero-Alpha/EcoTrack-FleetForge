@@ -1,0 +1,59 @@
+/* Sticky Footer Layout */
+html, body {
+    height: 100%; /* Full height */
+    margin: 0; /* Remove default margin */
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .main-content {
+    flex: 1; /* Push the footer to the bottom */
+  }
+  
+  .footer {
+    background-color: #034F20; /* Dark background */
+    color: #ffffff;
+    font-size: 14px;
+    padding: 20px 0;
+  }
+  
+  .footer-heading {
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  
+  .footer a {
+    color: #bbbbbb;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .footer a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .social-icons a {
+    color: #bbbbbb;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #ffffff;
+  }
+  
+  /* Copyright Section */
+  .text-muted {
+    color: #888888 !important;
+  }
+  
+
+  

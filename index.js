@@ -1,24 +1,31 @@
 const express = require("express");
-const connectDB = require("./db");
+// const connectDB = require("./db");
 const path = require("path");
 const { postRequest } = require("./services/apiService");
 require("dotenv").config();
+const methodOverride = require("method-override");
+const ejsMate = require("ejs-mate");
 
 const app = express();
 
 // SET UP EJS VIEW ENGINE
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.engine("ejs",ejsMate);
+app.set("view engine","ejs");
+app.set("views", path.join(__dirname,"/views"));
+app.use(express.static(path.join(__dirname,"public")));
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+app.use(methodOverride("_method"));
 
 // CONNECT TO MONGODB
-connectDB();
+// connectDB();
 
 // MIDDLEWARE TO PARSE JSON REQUESTS
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "asset")));
 app.use(express.json());
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 4001;
 
 // GLOBAL DELIVERY OPTIONS
 const deliveryOptions = [
@@ -65,7 +72,7 @@ app.get('/checkout', async (req, res) => {
   // Update the delivery options with calculated CO2 savings
   await calculateEmissionsForAllDeliveries();
 
-  res.render('checkout', { deliveryOptions });
+  res.render('listings/checkout', { deliveryOptions });
 });
 
 // CALCULATE CARBON EMISSIONS USING ULIP API
@@ -113,7 +120,7 @@ const calculateEmissionsForAllDeliveries = async () => {
 
 // HOMEPAGE ROUTE
 app.get("/homepage", (req, res) => {
-  res.render("homepage");
+  res.render("listings/homepage");
 });
 
 // START SERVER
