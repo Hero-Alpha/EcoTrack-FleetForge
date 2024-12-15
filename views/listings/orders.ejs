@@ -1,0 +1,101 @@
+<% layout("/layouts/boilerplate-user") %>
+
+    <link rel="stylesheet" href="css/orders.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <div class="container">
+        <main>
+            <header class="header">
+                <h1>Orders</h1>
+                <div class="filter">
+                    <label for="date">📅 Nov 1 - Nov 30, 2024</label>
+                </div>
+                <div class="actions">
+                    <button class="btn export">Export</button>
+                    <button class="btn create">Create Order</button>
+                </div>
+            </header>
+
+            <section class="stats">
+                <div class="stat-card">
+                    <p>Total Orders</p>
+                    <h3>21</h3>
+                    <span>↓ 25.2% last week</span>
+                </div>
+                <div class="stat-card">
+                    <p>Order Items Over Time</p>
+                    <h3>15</h3>
+                    <span>↓ 18.2% last week</span>
+                </div>
+                <div class="stat-card">
+                    <p>Returns Orders</p>
+                    <h3>0</h3>
+                    <span>-1.2% last week</span>
+                </div>
+                <div class="stat-card">
+                    <p>Fulfilled Orders</p>
+                    <h3>12</h3>
+                    <span>↑ 12.2% last week</span>
+                </div>
+            </section>
+
+            <section class="order-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Date</th>
+                            <th>Customer</th>
+                            <th>Payment</th>
+                            <th>Total</th>
+                            <th>Items</th>
+                            <th>Fulfilment</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#1002</td>
+                            <td>11 Nov, 2024</td>
+                            <td>Harry Potter</td>
+                            <td><span class="badge pending">Pending</span></td>
+                            <td>₹200.00</td>
+                            <td>2 items</td>
+                            <td><span class="badge unfulfilled">Unfulfilled</span></td>
+                            <td>✏️</td>
+                        </tr>
+                        <tr>
+                            <td>#1004</td>
+                            <td>13 Nov, 2024</td>
+                            <td>Hermione Granger</td>
+                            <td><span class="badge success">Success</span></td>
+                            <td>₹220.00</td>
+                            <td>3 items</td>
+                            <td><span class="badge fulfilled">Fulfilled</span></td>
+                            <td>✏️</td>
+                        </tr>
+                        <tr>
+                            <td>#1007</td>
+                            <td>15 Nov, 2024</td>
+                            <td>Ron Weasley</td>
+                            <td><span class="badge pending">Pending</span></td>
+                            <td>₹2500.00</td>
+                            <td>1 item</td>
+                            <td><span class="badge unfulfilled">Unfulfilled</span></td>
+                            <td>✏️</td>
+                        </tr>
+                        <tr>
+                            <td>#1009</td>
+                            <td>17 Nov, 2024</td>
+                            <td>Draco Malfoy</td>
+                            <td><span class="badge success">Success</span></td>
+                            <td>₹3709.00</td>
+                            <td>5 items</td>
+                            <td><span class="badge fulfilled">Fulfilled</span></td>
+                            <td>✏️</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>

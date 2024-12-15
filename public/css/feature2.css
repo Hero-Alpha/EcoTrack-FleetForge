@@ -1,0 +1,221 @@
+/* General Body Styling */
+
+body {
+
+    font-family: 'Arial', sans-serif;
+
+    margin: 0;
+
+    padding: 0;
+
+    background-color: #f8f9fa;
+
+}
+
+/* Hero Section Styling */
+
+.hero-section {
+
+    background: linear-gradient(to bottom, #28a745, #218838);
+
+    padding: 100px 0;
+
+    color: white;
+
+    text-align: center;
+
+}
+
+.hero-section h1 {
+
+    font-size: 3rem;
+
+    margin-bottom: 15px;
+
+}
+
+.hero-section p {
+
+    font-size: 1.2rem;
+
+}
+
+/* Map Section */
+
+#map img {
+
+    max-width: 100%;
+
+    transition: transform 0.3s ease-in-out;
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+    border-radius: 10px;
+
+}
+
+#map img:hover {
+
+    transform: scale(1.05) rotate(-1deg);
+
+}
+
+/* Section Titles */
+
+h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 20px;
+
+    color: #28a745;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-weight: bold;
+
+}
+
+/* Companies Section */
+
+.company-card {
+
+    background-color: #fff;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+
+    transition: all 0.5s ease;
+
+    border: 2px solid transparent;
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+.company-card i {
+
+    transition: transform 0.3s ease;
+
+}
+
+.company-card h5 {
+
+    font-size: 1.25rem;
+
+    margin: 15px 0;
+
+    color: #333;
+
+    transition: color 0.3s ease;
+
+}
+
+/* Animated Top Border */
+
+.company-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 0%;
+
+    height: 3px;
+
+    background: #28a745;
+
+    transition: width 0.3s ease;
+
+}
+
+.company-card:hover::before {
+
+    width: 100%;
+
+}
+
+/* Hover Effects for Cards */
+
+.company-card:hover {
+
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+
+    border-color: #28a745;
+
+}
+
+.company-card:hover h5 {
+
+    color: #28a745;
+
+}
+
+.company-card:hover i {
+
+    transform: rotate(10deg);
+
+}
+
+/* Progress Bar */
+
+.progress {
+
+    height: 8px;
+
+    background-color: #e9ecef;
+
+    border-radius: 5px;
+
+}
+
+.progress-bar {
+
+    transition: width 1.5s ease;
+
+    background-color: #28a745;
+
+}
+
+/* Footer Styling */
+
+footer {
+
+    background-color: #28a745;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 15px 0;
+
+    font-size: 0.9rem;
+
+}
+
+/* Scroll Animation for Sections */
+
+[data-aos] {
+
+    transition-property: transform, opacity;
+
+    transition-duration: 0.8s;
+
+    transition-timing-function: ease-in-out;
+
+}

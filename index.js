@@ -175,6 +175,31 @@ app.get("/homepage", (req, res) => {
   res.render("listings/homepage");
 });
 
+// HELP & SUPPORT ROUTE
+app.get("/help", (req, res) => {
+  res.render("listings/help-support");
+});
+
+// --------------------------------------------------------------------------
+
+// USER HOME PAGE ROUTE (AFTER SIGN IN BUTTON PRESSED)
+app.get("/userHome", (req, res) => {
+  res.render("listings/userHome");
+});
+
+// USER ORDERS ROUTE
+app.get("/orders",(req,res) => {
+  res.render("listings/orders");
+});
+
+// CUSTOMER ENGAGEMENT
+app.get("/customer-eng",(req,res) => {
+  res.render("listings/customer-eng");
+});
+
+
+// --------------------------------------------------------------------------
+
 // COMPANY ROUTE
 app.get("/signin",(req,res)=>{
   res.render("listings/companySignup");
@@ -182,10 +207,22 @@ app.get("/signin",(req,res)=>{
 
 app.use("/signup",companyRouter);
 
+
 // --------------------------------------------------------------------------
 
+// FEATURE 1(CARBON TRACKER)
 app.get("/feature1",(req,res)=>{
   res.render("listings/feature1");
+});
+
+// FEATURE 2(SUSTAINABLE SHIPPING)
+app.get("/feature2",(req,res)=>{
+  res.render("listings/feature2");
+});
+
+// FEATURE 4(SUPPLIER INTEGRATION)
+app.get("/feature4",(req,res)=>{
+  res.render("listings/feature4");
 });
 
 

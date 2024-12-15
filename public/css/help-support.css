@@ -1,0 +1,143 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(12, 103, 23);
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+header .get-in-touch button {
+    font-weight: bold;
+    padding: 10px 20px;
+    background-color: #FFF3D1;
+    color: rgb(15, 15, 15);
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header .get-in-touch button:hover {
+    background-color: #FFECB3; /* Slightly darker shade for hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+main {
+    padding: 40px;
+}
+
+.search-section {
+    text-align: center;
+    margin-bottom: 40px;
+    background-color: #CFFCB7;
+    padding: 50px 0; 
+    width: 100%;
+}
+.doodle1{
+    width: 60px;
+
+}
+.doodle{
+margin-left: 520px;}
+
+.search-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.search-box {
+    display: inline-flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-box input {
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+    outline: none;
+    width: 300px;
+}
+
+.search-btn {
+    font-weight: bold;
+    background-color: #FFF3D1;
+    color: rgb(17, 17, 17);
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #FFECB3; /* Slightly darker shade for hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.categories {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px; /* Add gap between the cards */
+}
+
+.category {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category:hover {
+    transform: translateY(-10px); /* Card lifts on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increased shadow */
+}
+
+.category .icon {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.icon img {
+    width: 50px;
+}
+
+.category h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.category p {
+    font-size: 14px;
+    color: #777;
+}

@@ -1,0 +1,118 @@
+<style>
+    /* Navbar */
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #bae1bc;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #09570a;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    justify-content: center; /* Center the menu items */
+    gap: 20px;
+    flex-grow: 1; /* Take up all the space available */
+}
+
+.menu li {
+    position: relative;
+    cursor: pointer;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.menu li.active span,
+.menu li:hover span, a:hover {
+    color: #076213;
+    border-bottom: 2px solid #076213;
+    padding-bottom: 5px;
+}
+
+.menu span {
+    display: inline-block;
+    padding: 5px 0;
+}
+
+a {
+    color: #555;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+/* Profile Dropdown */
+.profile {
+    position: relative;
+    margin-left: auto; /* Align the profile to the right */
+}
+
+.profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 160px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background-color: #bae1bc;
+}
+
+.profile:hover .dropdown-content {
+    display: block;
+}
+
+.profile {
+    position: relative;
+}
+
+</style>
+
+<nav class="navbar">
+    <div class="logo">
+        <h2>ShopZen</h2>
+    </div>
+    <ul class="menu">
+        <li><a href="/userHome">Home</a></li>
+        <li><a href="/orders">Orders</a></li>
+        <li><a href="/customer-eng">Customer Engagement</a></li>
+        <li><a href="#">Incentives</a></li>
+    </ul>
+    <div class="profile">
+        <img class="profile-pic" src="user-profile.jpg" alt="User Profile">
+        <div class="dropdown-content">
+            <a href="#">Account Settings</a>
+            <a href="/homepage">Logout</a>
+        </div>
+    </div>
+</nav>

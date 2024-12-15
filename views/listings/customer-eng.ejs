@@ -1,0 +1,481 @@
+<% layout("/layouts/boilerplate-user") %>
+
+<style>
+    body {
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F9;
+    color: #CFFCB7;
+    overflow-x: hidden;
+    }
+
+    header {
+    text-align: center;
+    padding: 30px;
+    background-color: #CFFCB7;
+    color: #0d0101;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    }
+
+    .intro {
+    text-align: center;
+    padding: 20px;
+    background-color: #DAF8FF;
+    color: #044d5d;
+    }
+
+    .intro p {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    }
+
+    .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    }
+
+    .card {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 20px;
+    width: 390px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .card img {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    object-fit: contain;
+    }
+
+    .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(110, 25, 25, 0.2);
+    }
+
+    .card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #455b72;
+    }
+
+    .card p {
+    font-size: 1rem;
+    margin: 8px 0;
+    color: #6C757D;
+    padding-left: 10px;
+    }
+
+    .card .feedback {
+    margin-top: 15px;
+    display:contents;
+    margin-right:10px;
+    }
+
+    .rating {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    }
+
+    .rating span {
+    font-size: 1.5rem;
+    color: #FFD700;
+    cursor: pointer;
+    transition: color 0.3s;
+    }
+
+    .rating span:hover,
+    .rating span.active {
+    color: #FFC107;
+    }
+
+    .feedback {
+    border-top: 1px solid #E9ECEF;
+    padding-top: 15px;
+    display:flexbox;
+    }
+
+    .feedback div {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    }
+
+    .feedback div img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+    }
+
+    .feedback div strong {
+    display: flexbox;
+    color: #343A40;
+    margin-bottom: 5px;
+    margin-right: 10px;
+    white-space: nowrap;
+    }
+
+    .feedback div span {
+    margin-right: 10px;
+    display: grid;
+    color: #6C757D;
+    margin-top: 5px;
+    }
+
+    .feedback-input {
+    margin-top: 20px;
+    border-top: 1px solid #E9ECEF;
+    padding-top: 15px;
+    }
+
+    .feedback-input textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #DADCE0;
+    border-radius: 8px;
+    resize: none;
+    }
+
+    .feedback-input button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #38B000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    .feedback-input button:hover {
+    background-color: #2C9500;
+    }
+
+    .card .percentage-bar {
+    height: 20px;
+    background: #E9ECEF;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+    position: relative;
+    }
+
+    .card .percentage-bar .fill {
+    height: 100%;
+    width: 0;
+    background: #38B000;
+    transition: width 1s;
+    }
+
+    .card:hover .fill {
+    width: var(--percentage);
+    }
+
+    footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #343A40;
+    color: #E9ECEF;
+    }
+
+    @media (max-width: 768px) {
+    .card {
+    width: 90%;
+    }
+    }
+</style>
+   
+
+    
+        <div class="intro">
+            <p>Discover how companies are driving customer engagement through sustainable and innovative logistics
+                solutions.</p>
+        </div>
+
+
+        <div class="container">
+            <div class="card" style="--percentage: 85%;">
+                <img src="Closet.png" alt="Closet">
+                <h2>Closet</h2>
+                <p><strong>About:</strong> Specializes in high-quality minimalist essentials like neutral-toned tees,
+                    structured pants, and cozy knits for everyday wear.</p>
+                <div class="rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                </div>
+                <p><strong>Customer Engagement:</strong> 85%</p>
+
+                <div class="percentage-bar">
+                    <div class="fill"></div>
+                </div>
+
+                <div class="feedback">
+                    <div>
+                        <img src="user1.png" alt="Alex K">
+                        <div>
+                            <strong>Alex K.</strong>
+                            <span>By choosing ShopZen, I feel proud knowing my deliveries have a lower carbon footprint.
+                                It's amazing to be a small part of the green movement!</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="user2.png" alt="Priya S">
+                        <div>
+                            <strong>Priya S.</strong>
+                            <span>"Choosing eco-friendly shipping felt like the right thing to do. It’s incredible how
+                                much emissions we can collectively save through such initiatives."</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-input">
+                    <textarea placeholder="Share your feedback..."></textarea>
+                    <button>Submit</button>
+                </div>
+
+            </div>
+
+            <div class="card" style="--percentage: 75%;">
+                <img src="Fashionshop.png" alt="Fashionshop">
+                <h2>Fashionshop</h2>
+                <p><strong>About:</strong>Focused on kids' fashion with fun, colorful clothing options that are
+                    comfortable and durable for active play.
+                </p>
+                <div class="rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+                <p><strong>Customer Engagement:</strong> 75%</p>
+                <div class="percentage-bar">
+                    <div class="fill"></div>
+                </div>
+
+                <div class="feedback">
+                    <div>
+                        <img src="user3.jpg" alt="Maya L">
+                        <div>
+                            <strong>Maya L.</strong>
+                            <span>"ShopZen has made me realize how simple and impactful eco-conscious decisions can be.
+                                Every order feels like a positive action for the Earth."
+
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="user4.png" alt="John D">
+                        <div>
+                            <strong>John D.</strong>
+                            <span>"Using ShopZen has helped me reduce my carbon footprint without compromising on fast
+                                delivery. Sustainability and efficiency together—what’s not to love?"</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-input">
+                    <textarea placeholder="Share your feedback..."></textarea>
+                    <button>Submit</button>
+                </div>
+
+            </div>
+
+            <div class="card" style="--percentage: 80%;">
+                <img src="Lactose.png" alt="Lactose">
+                <h2>Lactose</h2>
+                <p><strong>About:</strong>Your ultimate destination for all things denim, offering everything from
+                    classic jeans to stylish jackets in various fits and washes.</p>
+                <div class="rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+                <p><strong>Customer Engagement:</strong> 80%</p>
+                <div class="percentage-bar">
+                    <div class="fill"></div>
+                </div>
+
+                <div class="feedback">
+                    <div>
+                        <img src="user5.png" alt="Emma T">
+                        <div>
+                            <strong>Emma T.</strong>
+                            <span>"I always opt for ShopZen's green logistics. It’s satisfying to know that my small
+                                decisions help reduce emissions and protect the environment."
+
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="user1.png" alt="Ravi K">
+                        <div>
+                            <strong>Ravi K.</strong>
+                            <span>"Switching to ShopZen's eco-friendly shipping was an easy choice. Knowing my packages
+                                are delivered with minimal environmental impact makes every order more
+                                meaningful!"</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-input">
+                    <textarea placeholder="Share your feedback..."></textarea>
+                    <button>Submit</button>
+                </div>
+
+            </div>
+
+            <div class="card" style="--percentage: 70%;">
+                <img src="ShopCart.jpg" alt="ShopCart">
+                <h2>ShopCart</h2>
+                <p><strong>About:</strong>A go-to brand for streetwear lovers, offering edgy hoodies, oversized tees,
+                    and exclusive limited-edition drops. </p>
+                <div class="rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                </div>
+                <p><strong>Customer Engagement:</strong> 70%</p>
+                <div class="percentage-bar">
+                    <div class="fill"></div>
+                </div>
+
+                <div class="feedback">
+                    <div>
+                        <img src="user3.jpg" alt="Sophia L">
+                        <div>
+                            <strong>Sophia L.</strong>
+                            <span>ShopZen's eco-friendly shipping options inspire me to make greener choices. I feel
+                                like I’m taking a step towards saving the planet!"</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="user4.png" alt="Arjun M">
+                        <div>
+                            <strong>Arjun M.</strong>
+                            <span>"I always opt for ShopZen's green logistics. It’s satisfying to know that my small
+                                decisions help reduce emissions and protect the environment."</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-input">
+                    <textarea placeholder="Share your feedback..."></textarea>
+                    <button>Submit</button>
+                </div>
+
+            </div>
+
+
+            <div class="card" style="--percentage: 60%;">
+                <img src="CoffeeCafe.jpg" alt="CoffeeCafe">
+                <h2>CoffeeCafe</h2>
+                <p><strong>About:</strong>Specializes in premium-quality evening wear and designer collections, perfect
+                    for weddings and parties.</p>
+                <div class="rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                    <span>☆</span>
+                </div>
+                <p><strong>Customer Engagement:</strong> 60%</p>
+                <div class="percentage-bar">
+                    <div class="fill"></div>
+                </div>
+
+                <div class="feedback">
+                    <div>
+                        <img src="user4.png" alt="Sophia L">
+                        <div>
+                            <strong>Sophia L.</strong>
+                            <span>"Using ShopZen has helped me reduce my carbon footprint without compromising on fast
+                                delivery. Sustainability and efficiency together—what’s not to love?"
+
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="user3.jpg" alt="Arjun M">
+                        <div>
+                            <strong>Arjun M.</strong>
+                            <span>"I used ShopZen for my recent deliveries, and their green shipping made me feel like
+                                I’m contributing to a cleaner future. Every bit counts!"</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-input">
+                    <textarea placeholder="Share your feedback..."></textarea>
+                    <button>Submit</button>
+                </div>
+
+            </div>
+
+            <div class="card" style="--percentage: 40%;">
+                <img src="Gentleman.png" alt="Gentleman">
+                <h2>GentleMan</h2>
+                <p><strong>About:</strong> Offers trendy, season-inspired clothing with new arrivals every week and
+                    affordable pricing for all age groups.</p>
+                <div class="rating">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>☆</span>
+                </div>
+                <p><strong>Customer Engagement:</strong> 40%</p>
+                <div class="percentage-bar">
+                    <div class="fill"></div>
+                </div>
+
+                <div class="feedback">
+                    <div>
+                        <img src="user5.png" alt="Sophia L">
+                        <div>
+                            <strong>Sophia L.</strong>
+                            <span>"ShopZen has made me realize how simple and impactful eco-conscious decisions can be.
+                                Every order feels like a positive action for the Earth."
+
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="user1.png" alt="Arjun M">
+                        <div>
+                            <strong>Arjun M.</strong>
+                            <span>"I always opt for ShopZen's green logistics. It's satisfying to know that my small
+                                decisions help reduce emissions and protect the environment."</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-input">
+                    <textarea placeholder="Share your feedback..."></textarea>
+                    <button>Submit</button>
+                </div>
+
+            </div>
+
+
+
+        </div>
