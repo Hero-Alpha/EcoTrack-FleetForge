@@ -6,6 +6,7 @@ const ejsMate = require("ejs-mate");
 const ExpressError = require("./utils/ExpressError.js");
 const session = require("express-session");
 const flash = require("connect-flash");
+const connectDB = require('./db');
 
 
 // ----------------------------------------------------------------------------------------------------------------
@@ -34,17 +35,17 @@ app.use(methodOverride("_method"));
 
 // ----------------------------------------------------------------------------------------------------------------
 // CONNECT TO MONGODB
-// connectDB();
+connectDB();
 
-main()
-    .then(()=>{
-        console.log("Database connected");
-    })
-    .catch((err)=> console.log(err));
+// main()
+//     .then(()=>{
+//         console.log("Database connected");
+//     })
+//     .catch((err)=> console.log(err));
 
-async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/ecotrack");
-}
+// async function main() {
+//     await mongoose.connect("mongodb://127.0.0.1:27017/ecotrack");
+// }
 
 // ----------------------------------------------------------------------------------------------------------------
 // MIDDLEWARE TO PARSE JSON REQUESTS
