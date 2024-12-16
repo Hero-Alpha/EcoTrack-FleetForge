@@ -16,7 +16,7 @@
   <!-- Header -->
   <header class="bg-success text-white py-3" data-aos="fade-down">
     <div class="container d-flex justify-content-between align-items-center">
-      <a href="/homepage">
+      <a href="/homepage" class="top">
         <h1 class="h2"><img class="images logo" src="/Logo-homepage.png" alt="x">EcoTrack</h1>
       </a>
       <span class="badge bg-light text-success cart-text">Cart (2) <img class="images cart" src="/cart.png"
@@ -81,18 +81,20 @@
             </div>
             <% }); %>
         </div>
-        <button type="button" class="btn btn-primary place-order h-30px w-100 mt-3">Place Order</button>
       <!-- </form> -->
     </section>
-
+    
     <!-- Total -->
-    <section class="total mt-4" data-aos="fade-up">
+    <section class="total mt-4 mb-3" data-aos="fade-up">
       <div class="d-flex justify-content-between align-items-center">
         <h4>Subtotal: ₹329.98</h4>
         <h4>Delivery Fee: ₹<span id="delivery-fee">0.00</span></h4>
         <h3>Total: ₹<span id="total">329.98</span></h3>
       </div>
     </section>
+    
+    <button type="button" class="btn btn-primary place-order h-30px w-100 mt-3">Place Order</button>
+  
   </div>
 
   <!-- Fullscreen Animation -->

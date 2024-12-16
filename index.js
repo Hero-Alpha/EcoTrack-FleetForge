@@ -83,7 +83,7 @@ const deliveryOptions = [
     name: 'EcoExpress',
     time: '2-3 days',
     rating: '4.5',
-    price: '₹5.99',
+    price: '₹3.99',
     co2Savings: '2.5',
     ecoFriendly: true,
     weight: 5, 

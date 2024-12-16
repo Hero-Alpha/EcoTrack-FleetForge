@@ -1,168 +1,180 @@
-    .eco-friendly-badge {
-        background-color: #2e8b57;
-        color: white;
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 12px;
+/* Ensure body is scrollable */
+body {
+    min-height: 100vh;  /* Ensure the body takes up at least the full height of the viewport */
+    overflow-y: auto;   /* Allow vertical scrolling */
+}
+.top{
+    text-decoration: none !important;
+    color: white;
+}
+/* Make sure the main container is appropriately sized */
+.container.my-5 {
+    min-height: 100%;   /* Ensure it takes up all available space */
+}
+
+/* Fix for the total section and prevent overlap */
+.total {
+    margin-top: 20px;
+    padding-bottom: 20px; /* Extra space to ensure it's visible */
+    position: relative; /* Ensure it's part of the flow */
+    z-index: 1; /* Prevent overlay issues */
+}
+
+/* Order summary and delivery options sections */
+.order-summary,
+.delivery-options {
+    margin-bottom: 30px;
+}
+
+.order-summary h3,
+.delivery-options h3 {
+    font-size: 1.5rem;
+}
+
+
+
+.card {
+    transition: all 0.3s ease-in-out !important;
+}
+
+.card:hover {
+    transform: scale(1.01) !important; /* Scale up on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important; /* Add shadow on hover */
+}
+
+/* Eco-friendly badge styling */
+.eco-friendly-badge {
+    background-color: #2e8b57;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Custom badge for saves and produces emissions */
+.saves {
+    background-color: #cfe9c0;
+    color: rgb(0, 74, 0);
+    border: 1px solid rgb(0, 74, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.produces {
+    border: 1px solid rgb(88, 57, 0);
+    background-color: rgb(255, 235, 197);
+    color: rgb(88, 57, 0);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Select button styling */
+.select {
+    background-color: #a3d3fb !important;
+    border: 1px solid rgb(5, 5, 57) !important;
+    color: rgb(5, 5, 57) !important;
+    font-weight: 600 !important;
+    transition: background-color 0.3s ease, transform 0.3s ease-in-out !important;
+}
+
+.select:hover {
+    background-color: #c0dcf2 !important;
+    color: rgb(5, 5, 57) !important;
+    border-color: rgb(5, 5, 57) !important;
+    color: white;
+    transform: scale(1.02) !important;
+}
+
+.select:hover {
+    cursor: pointer;
+}
+
+/* Button styling */
+.place-order {
+    transition: background-color 0.3s ease, transform 0.6s ease;
+}
+
+.place-order:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Image styling */
+.images {
+    width: 20px;
+    height: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 85px;
+    transform: translateY(-6px);
+}
+
+.cart {
+    height: 42px;
+    width: 42px;
+}
+
+.truck {
+    height: 30px;
+    width: 30px;
+}
+
+.delivery {
+    height: 42px;
+    width: 42px;
+}
+
+.cart-text {
+    font-size: 15px !important;
+}
+
+.cart-text img {
+    height: 23px;
+    width: 23px;
+}
+
+/* Prevent input translation and margin overlap */
+input {
+    transform: translateY(-3px);
+}
+
+/* Fullscreen green background with white tick */
+#fullscreen-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(78, 220, 107, 0.5); /* Optional overlay */
+    display: none; /* Initially hidden */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure it overlays the page */
+}
+
+#fullscreen-animation.show {
+    display: flex; /* Show when triggered */
+}
+
+/* White tick animation */
+.tick {
+    font-size: 50px;
+    color: white;
+    animation: tick-animation 0.5s ease-in-out;
+}
+
+@keyframes tick-animation {
+    0% {
+        transform: scale(0);
     }
-
-    .card {
-        transition: all 0.3s ease-in-out !important;
-        /* Smooth transition */
-        /* transform: scale(1) !important; */
-        /* Default scale */
+    50% {
+        transform: scale(1.2);
     }
-
-    .card:hover {
-        transform: scale(1.01) !important;
-        /* Scale up on hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
-        /* Add shadow on hover */
+    100% {
+        transform: scale(1);
     }
-
-    .saves {
-        background-color: #cfe9c0;
-        color: rgb(0, 74, 0);
-        border: 1px solid rgb(0, 74, 0);
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    .produces {
-        border: 1px solid rgb(88, 57, 0);
-        background-color: rgb(255, 235, 197);
-        color: rgb(88, 57, 0);
-        padding: 5px 10px;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    .select {
-        background-color: #a3d3fb !important;
-        border: 1px solid rgb(5, 5, 57) !important;
-        color: rgb(5, 5, 57) !important;
-        font-weight: 600 !important;
-        transition: background-color 0.3s ease, transform 0.3s ease-in-out !important;
-    }
-
-    .select:hover {
-        background-color: #c0dcf2 !important;
-        color: rgb(5, 5, 57) !important;
-        border-color: rgb(5, 5, 57) !important;
-        color: white;
-        transform: scale(1.02) !important;
-    }
-
-    .place-order {
-        transition: background-color 0.3s ease, transform 0.6s ease;
-    }
-
-    .place-order:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
-    }
-
-    .select:hover {
-        cursor: pointer;
-    }
-
-    .images {
-        width: 20px;
-        height: 20px;
-    }
-
-    .logo {
-        width: 100px;
-        height: 85px;
-        transform: translateY(-6px);
-    }
-
-
-
-    .cart {
-        height: 42px;
-        width: 42px;
-    }
-
-    .truck {
-        height: 30px;
-        width: 30px;
-    }
-
-    .delivery {
-        height: 42px;
-        width: 42px;
-    }
-
-    .cart-text {
-        font-size: 15px !important;
-    }
-
-    .cart-text img {
-        height: 23px;
-        width: 23px;
-    }
-
-    a {
-        text-decoration: none !important;
-        color: white !important;
-    }
-
-    
-
-    .total {
-        margin-top: 20px;
-        padding-bottom: 20px; /* Extra space to ensure it's visible */
-        position: relative; /* Ensure it's part of the flow */
-        z-index: 1; /* Prevent overlay issues */
-      }
-
-      
-    /* Fullscreen green background with white tick */
-    #fullscreen-animation {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(78, 220, 107, 0.5);
-        /* Optional overlay */
-        display: none;
-        /* Initially hidden */
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        /* Ensure it overlays the page */
-    }
-
-    #fullscreen-animation.show {
-        display: flex;
-        /* Show when triggered */
-    }
-
-
-    /* White tick animation */
-    .tick {
-        font-size: 50px;
-        color: white;
-        animation: tick-animation 0.5s ease-in-out;
-    }
-
-    @keyframes tick-animation {
-        0% {
-            transform: scale(0);
-        }
-
-        50% {
-            transform: scale(1.2);
-        }
-
-        100% {
-            transform: scale(1);
-        }
-    }
-
-    input {
-        transform: translateY(-3px);
-    }
+}
