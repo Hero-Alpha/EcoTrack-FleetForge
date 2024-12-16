@@ -188,6 +188,16 @@ app.get("/userHome", (req, res) => {
   res.render("listings/userHome");
 });
 
+// ADDING VEHICLE ROUTE
+app.get("/addVehicle", (req, res) => {
+  res.render("listings/addVehicle");
+});
+
+// ADD DRIVER ROUTE
+app.get("/addDriver", (req, res) => {
+  res.render("listings/addDeliveryPartner");
+});
+
 // USER ORDERS ROUTE
 app.get("/orders",(req,res) => {
   res.render("listings/orders");

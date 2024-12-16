@@ -1,0 +1,93 @@
+<% layout("/layouts/boilerplate-user") %>
+
+<div class="row mt-3">
+    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
+        <h1 class="text-center mb-3">Register a Driver</h1>
+        <p class="text-center text-muted">
+            Provide driver details to manage and streamline your delivery operations effortlessly.
+        </p>
+        <form action="/userHome" method="get" class="needs-validation" novalidate>
+            <!-- Name -->
+            <div class="mb-3">
+                <label for="name" class="form-label">Driver Name</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Enter driver's full name"
+                        required
+                    >
+                </div>
+                <div class="invalid-feedback">Please provide the driver's name!</div>
+            </div>
+            
+            <!-- Age -->
+            <div class="mb-3">
+                <label for="age" class="form-label">Age (Optional)</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-calendar-date-fill"></i></span>
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="age"
+                        id="age"
+                        placeholder="Enter driver's age"
+                    >
+                </div>
+            </div>
+            
+            <!-- License Number -->
+            <div class="mb-3">
+                <label for="licenseNumber" class="form-label">License Number</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-card-checklist"></i></span>
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="licenseNumber"
+                        id="licenseNumber"
+                        placeholder="Enter license number (e.g., DL-12345-6789)"
+                        required
+                    >
+                </div>
+                <div class="invalid-feedback">Please provide a valid license number!</div>
+            </div>
+            
+            <!-- Contact -->
+            <div class="mb-3">
+                <label for="contact" class="form-label">Contact</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-telephone-fill"></i></span>
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="contact"
+                        id="contact"
+                        placeholder="Enter contact number"
+                    >
+                </div>
+            </div>
+            
+            <!-- Company -->
+            <div class="mb-3">
+                <label for="company" class="form-label">Company</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-building"></i></span>
+                    <input
+                        class="form-control"
+                        type="text"
+                        name="company"
+                        id="company"
+                        placeholder="Enter associated company ID"
+                    >
+                </div>
+            </div>
+            
+            <!-- Submit Button -->
+            <button class="btn btn-dark col-12 mt-3" type="submit">Register Driver</button>
+        </form>
+    </div>
+</div>
