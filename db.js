@@ -1,4 +1,4 @@
-require('dotenv').config(); // Load environment variables before anything else
+require('dotenv').config();
 const mongoose = require('mongoose');
 
 const uri = process.env.MONGO_URI;
@@ -8,14 +8,11 @@ const connectDB = async () => {
     if (!uri) {
       throw new Error("MongoDB URI is not defined. Check your .env file.");
     }
-    await mongoose.connect(uri, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await mongoose.connect(uri);
     console.log("MongoDB Atlas connected successfully!");
   } catch (err) {
     console.error("MongoDB connection error:", err.message);
-    process.exit(1); // Exit the process on failure
+    process.exit(1);
   }
 };
 

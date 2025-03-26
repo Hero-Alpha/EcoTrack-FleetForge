@@ -13,7 +13,7 @@ const connectDB = require('./db');
 
 // const connectDB = require("./db");
 const { postRequest } = require("./services/apiService");
-require("dotenv").config();
+// require("dotenv").config();
 
 // ----------------------------------------------------------------------------------------------------------------
 // REQUEST HANDLING ROUTERS
