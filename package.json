@@ -1,14 +1,14 @@
 {
   "name": "ecotrack",
   "version": "1.0.0",
-  "description": "",
+  "description": "EcoTrack-A sustainable logictics plug-in",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "FleetForge",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.7.8",
@@ -31,5 +31,14 @@
     "passport-local-mongoose": "^8.0.0",
     "path": "^0.12.7",
     "public": "^0.1.5"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hero-Alpha/EcoTrack-FleetForge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Hero-Alpha/EcoTrack-FleetForge/issues"
+  },
+  "homepage": "https://github.com/Hero-Alpha/EcoTrack-FleetForge#readme"
 }
