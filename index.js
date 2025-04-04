@@ -53,7 +53,7 @@ const carbonRouter = require("./routes/carbonRoutes");
 
 // -------------------------------------------------------------------------------------
 // Use Routes
-app.use("/signup", companyRouter);
+app.use("/", companyRouter);
 app.use("/drivers", driverRouter);
 app.use("/vehicles", vehicleRouter);
 app.use("/", carbonRouter);

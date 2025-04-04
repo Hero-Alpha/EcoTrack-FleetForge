@@ -18,14 +18,18 @@ exports.validateCompany = (req, res, next) => {
 // Create a new company
 exports.createCompany = async (req, res) => {
   try {
-    const { name, address, contact } = req.body;
-    const newCompany = new Company({ name, address, contact });
+    console.log("📩 Incoming signup request:", req.body);
+    const { name, address, email, contact } = req.body;
+    const newCompany = new Company({ name, address, email, contact });
     await newCompany.save();
-    res.status(201).json(newCompany);
+    console.log("✅ Company saved!");
+    res.redirect('/userHome');
   } catch (error) {
+    console.error("❌ Failed to save company:", error);
     res.status(400).json({ error: error.message });
   }
 };
+
 
 // Get all companies
 exports.getAllCompanies = async (req, res) => {

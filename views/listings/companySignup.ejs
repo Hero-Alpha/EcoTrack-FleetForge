@@ -4,12 +4,12 @@
     <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1">
         <h1 class="text-center mb-3">Company Sign Up</h1>
         <p class="text-center text-muted">Create your company account and start managing your fleet today!</p>
-        <form action="/userHome" method="get" class="needs-validation signup" novalidate>
+        <form action="/signup" method="post" class="needs-validation signup" novalidate>
             <div class="mb-3">
                 <label for="username" class="form-label">Company Name</label>
                 <div class="input-group">
                     <span class="input-group-text"><i class="bi bi-building"></i></span>
-                    <input class="form-control" type="text" name="username" placeholder="Enter Company Name" required>
+                    <input class="form-control" type="text" name="name" placeholder="Enter Company Name" required>
                 </div>
                 <div class="invalid-feedback">Company name should be valid!</div>
             </div>
